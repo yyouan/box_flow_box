@@ -77,10 +77,9 @@ def turnangle(angle=4120,speed=2):
 def turnonecircle():
     turnangle(4120,2)
 
-'''
-##testbench
-turnonecircle()
-turnangle(2000,2)
-time.sleep(1)
-turnangle(2120,2)
-'''
+
+if __name__ == "__main__":
+    turnonecircle()
+    turnangle(2000,2)
+    time.sleep(1)
+    turnangle(2120,2)
