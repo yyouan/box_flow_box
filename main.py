@@ -82,10 +82,10 @@ while True:
             
             for resul in response_2.json()["recognitionResult"]["lines"]:
                 if len(json.dumps(resul["text"])) > 10:
-                    ans = resul["text"]
+                    ans = resul["text"]            
+            servonew.turnonecircle()
             print("ID:",ans)
             print("rotate!")
-            servonew.turnonecircle()
             
             
         msg = {"deposit":ans ,"box_id":boxid}
