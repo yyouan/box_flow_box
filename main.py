@@ -30,7 +30,7 @@ while True:
             msg = {"withdraw": "","box_id":boxid}
             headers = {'Content-Type': 'application/json'}
             response_2 = requests.post("https://boxflow.herokuapp.com/withdraw", headers=headers, json = msg)
-            print(response_2)
+            print(response_2.body)
             input("a")
             if response_2 == "OK":                
                 servonew.turnquartercircle()
@@ -38,6 +38,7 @@ while True:
                     print("pass")
                     pass
                 servonew.turnquartercircle()
+                time.sleep(1)
                 servonew.turnquartercircle()
                 servonew.turnquartercircle()
                 print(json.dumps(msg))

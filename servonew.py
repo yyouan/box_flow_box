@@ -78,6 +78,7 @@ def turnonecircle():
     turnangle(4120,2)
 
 def turnquartercircle():
+    #input('1/4')
     turnangle(1030,2)
 
 if __name__ == "__main__":
