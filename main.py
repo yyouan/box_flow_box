@@ -41,16 +41,12 @@ ws = websocket.WebSocketApp(HOST, subprotocols = SUBPROTOCOLS, on_open = onOpen,
 
 #一直執行
 ws.run_forever()
-def show_text(image):
-    response_2 = requests.post(face_api_url, params=params, headers=headers, data = f)
-    print(response_2.json())
-    if len(response_2.json())!=0: 
-        id_curr = response_2.json()[0]['faceId']
-        print("id_curr:",id_curr)
-        print(json.dumps(response_2.json()))
+
 while True:
     if buttom.buttom():
+        print("button on!")
         temp_name = genHash() + ".png"
+        print("camera on!")
         cam.get_photo(temp_name)
         im = Image.open(temp_name)
         im_rotate = im.rotate(180)
@@ -86,9 +82,11 @@ while True:
             for resul in response_2.json()["recognitionResult"]["lines"]:
                 if len(json.dumps(resul["text"])) > 10:
                     ans = resul["text"]
-            print(ans)
+            print("ID:",ans)
+            print("rotate!")
             servonew.turnonecircle()
             
             
         msg = {"deposit":ans ,"box_id":boxid}
         ws.send(json.dumps(msg))
+        print(json.dumps(msg))
