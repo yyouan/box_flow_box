@@ -31,12 +31,13 @@ while True:
             response_2 = requests.post("https://boxflow.herokuapp.com/withdraw", headers=headers, json = msg)
             print(response_2)
             if response_2 == "OK":                
-                servonew.turnquatercircle()
+                servonew.turnquartercircle()
                 while not buttom.buttom():
+                    print("pass")
                     pass
-                servonew.turnquatercircle()
-                servonew.turnquatercircle()
-                servonew.turnquatercircle()
+                servonew.turnquartercircle()
+                servonew.turnquartercircle()
+                servonew.turnquartercircle()
         else:
             print(json.dumps(msg))
             print("button on!")
