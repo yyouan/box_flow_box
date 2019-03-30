@@ -36,18 +36,19 @@ ws = websocket.WebSocketApp(HOST, subprotocols = SUBPROTOCOLS, on_open = onOpen,
 
 #一直執行
 ws.run_forever()
-
+def show_text(image):
+    response_2 = requests.post(face_api_url, params=params, headers=headers, data = f)
+    print(response_2.json())
+    if len(response_2.json())!=0: 
+        id_curr = response_2.json()[0]['faceId']
+        print("id_curr:",id_curr)
+        print(json.dumps(response_2.json()))
 while True:
     if button():
         temp_name = genHash() + ".png"
         cam.get_photo(temp_name)
         with open(temp_name, "rb") as image:
             f = image.read()
-            response_2 = requests.post(face_api_url, params=params, headers=headers, data = f)
-            print(response_2.json())
-            if len(response_2.json())!=0: 
-                id_curr = response_2.json()[0]['faceId']
-                print("id_curr:",id_curr)
-                print(json.dumps(response_2.json()))
+            
         msg = {"deposit":""}
         ws.send(json.dumps(msg))
