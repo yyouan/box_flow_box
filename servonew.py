@@ -77,8 +77,8 @@ def turnangle(angle=4120,speed=2):
 def turnonecircle():
     turnangle(4120,2)
 
-def turnhalfcircle():
-    turnangle(2000,2)
+def turnquatercircle():
+    turnangle(1030,2)
 
 if __name__ == "__main__":
     turnonecircle()

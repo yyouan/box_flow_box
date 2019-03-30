@@ -30,12 +30,13 @@ while True:
             headers = {'Content-Type': 'application/json'}
             response_2 = requests.post("https://boxflow.herokuapp.com/withdraw", headers=headers, json = msg)
             print(response_2)
-            if response_2 == "OK":
-                response_2 = requests.post("https://boxflow.herokuapp.com/deposit", headers=headers, json = msg)
-                servonew.turnhalfcircle()
+            if response_2 == "OK":                
+                servonew.turnquatercircle()
                 while not buttom.buttom():
                     pass
-                servonew.turnhalfcircle()
+                servonew.turnquatercircle()
+                servonew.turnquatercircle()
+                servonew.turnquatercircle()
         else:
             print(json.dumps(msg))
             print("button on!")
