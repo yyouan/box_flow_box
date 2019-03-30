@@ -26,6 +26,7 @@ while True:
     if buttom.buttom():
         time.sleep(1)
         if buttom.buttom():
+            print("long bottom")
             msg = {"withdraw": "","box_id":boxid}
             headers = {'Content-Type': 'application/json'}
             response_2 = requests.post("https://boxflow.herokuapp.com/withdraw", headers=headers, json = msg)
