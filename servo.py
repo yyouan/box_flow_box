@@ -15,7 +15,7 @@ class Servo:
         GPIO.cleanup()
         
     def angle_to_duty_cycle(self, angle=0):
-        # TODO
+        duty_cycle = (0.05 * self.PWM_FREQ) + (0.19 * self.PWM_FREQ * angle / 180)
         return duty_cycle
 
     def turn(self, angle):

@@ -3,7 +3,7 @@ import http.client, urllib.request, urllib.parse, urllib.error, base64, json, ss
 ssl._create_default_https_context = ssl._create_unverified_context
 
 class AzureAPI:
-    def __init__(self, key='###your azure api key###', website='###you server location###'):
+    def __init__(self, key='057353660709425d8f69277c2297dee3', website='eastasia.api.cognitive.microsoft.com'):
         self.DetectHeaders = {
             # Request headers
             'Content-Type': 'application/octet-stream',
@@ -34,7 +34,7 @@ class AzureAPI:
     def GetFaceId(self, filename):
         try:
             self.body = open(filename, mode="rb")
-            # TODO
+            self.conn.request("POST", "/face/v1.0/detect?%s" % self.params, self.body, self.DetectHeaders)
             self.response = self.conn.getresponse()
             data = self.response.read()
             result = json.loads(data.decode('ascii'))
