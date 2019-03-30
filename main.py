@@ -43,6 +43,7 @@ ws = websocket.WebSocketApp(HOST, subprotocols = SUBPROTOCOLS, on_open = onOpen,
 ws.run_forever()
 
 while True:
+    print("no")
     if buttom.buttom():
         print("button on!")
         temp_name = genHash() + ".png"
