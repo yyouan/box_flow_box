@@ -20,11 +20,12 @@ def buttom():
             time.sleep(0.1)
             inputValue = GPIO.input(2)
     '''
+'''
 ##testbench
 while(True):
     if(buttom()==1):
         print("dont touch me")
         while(buttom()==1):
             time.sleep(0.1)
-
+'''
         

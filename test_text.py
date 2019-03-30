@@ -41,7 +41,7 @@ with open(temp_name, "rb") as image:
     }
     time.sleep(3) 
     response_2 = requests.get(response_2.headers["Operation-Location"], headers=headers)    
-    print(json.dumps(response_2.json()))
+    #print(json.dumps(response_2.json()))
     
     for resul in response_2.json()["recognitionResult"]["lines"]:
         if len(json.dumps(resul["text"])) > 10:
