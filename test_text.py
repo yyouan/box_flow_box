@@ -32,7 +32,7 @@ with open(temp_name, "rb") as image:
     'Content-Type': 'application/octet-stream'}
             
         params = {
-            'language': 'unk',
+            'language': 'en',
             'detectOrientation': 'true',
         }
         response_2 = requests.post(face_api_url, params=params, headers=headers, data = image)        
