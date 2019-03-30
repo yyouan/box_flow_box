@@ -21,7 +21,7 @@ def buttom():
             time.sleep(0.1)
             inputValue = GPIO.input(2)
     '''
-if if __name__ == "__main__":
+if __name__ == "__main__":
     ##testbench
     while(True):
         if(buttom()==1):
