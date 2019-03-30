@@ -1,5 +1,6 @@
 ########### Python 3.2 #############
 import http.client, urllib.request, urllib.parse, urllib.error, base64,requests,json
+import time
 from PIL import Image
 from pi_camera import Scanner
 cam = Scanner(0)
