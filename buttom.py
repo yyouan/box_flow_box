@@ -10,9 +10,10 @@ def buttom():
     GPIO.setup(2,GPIO.IN)
     inputValue = GPIO.input(2)
     if(inputValue==False):
-        return 1
+        print("OPEN!")
+        return True
     else:
-        return 0
+        return False
     '''
     if (inputValue == False): ##because it is put down
         print("dont touch me.")
