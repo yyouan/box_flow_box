@@ -38,8 +38,8 @@ while True:
                 servonew.turnquartercircle()
                 servonew.turnquartercircle()
                 servonew.turnquartercircle()
-        else:
-            print(json.dumps(msg))
+                print(json.dumps(msg))
+        else:            
             print("button on!")
             temp_name = genHash() + ".png"
             print("camera on!")
