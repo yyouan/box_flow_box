@@ -40,7 +40,7 @@ SUBPROTOCOLS = ['echo-protocol']
 ws = websocket.WebSocketApp(HOST, subprotocols = SUBPROTOCOLS, on_open = onOpen, on_message = onMessage)
 
 #一直執行
-ws.run_forever()
+#ws.run_forever()
 
 while True:
     print("no")
