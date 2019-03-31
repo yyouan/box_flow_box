@@ -42,6 +42,7 @@ while True:
                 servonew.turnquartercircle()
                 servonew.turnquartercircle()
                 print(json.dumps(msg))
+            
         else:            
             print("button on!")
             temp_name = genHash() + ".png"
@@ -80,7 +81,9 @@ while True:
                 ans=""
                 for resul in response_2.json()["recognitionResult"]["lines"]:
                     if len(json.dumps(resul["text"])) > 10:
-                        ans = resul["text"]            
+                        ans = resul["text"]
+                if ans =="":                    
+                    response_2 = requests.post("https://boxflow.herokuapp.com/nodeposit")             
                 servonew.turnonecircle()
                 print("ID:",ans)
                 print("rotate!")
