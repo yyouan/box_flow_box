@@ -83,7 +83,7 @@ while True:
                     if len(json.dumps(resul["text"])) > 10:
                         ans = resul["text"]
                 if ans =="":                    
-                    response_2 = requests.post("https://boxflow.herokuapp.com/nodeposit")             
+                    response_2 = requests.get("https://boxflow.herokuapp.com/nodeposit")             
                 else:
                     servonew.turnonecircle()
                     print("ID:",ans)
