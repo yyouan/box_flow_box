@@ -79,7 +79,7 @@ def turnonecircle():
 
 def turnquartercircle():
     #input('1/4')
-    turnangle(1030,2)
+    turnangle(1010,2)
 
 if __name__ == "__main__":
     turnonecircle()
