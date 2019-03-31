@@ -84,12 +84,13 @@ while True:
                         ans = resul["text"]
                 if ans =="":                    
                     response_2 = requests.post("https://boxflow.herokuapp.com/nodeposit")             
+                else:
                 servonew.turnonecircle()
                 print("ID:",ans)
                 print("rotate!")
+                msg = {"deposit":ans ,"box_id":boxid}
+                headers = {'Content-Type': 'application/json'} 
+                response_2 = requests.post("https://boxflow.herokuapp.com/deposit", params=params, headers=headers, json = msg)
+                print(json.dumps(msg))
                 
-                
-            msg = {"deposit":ans ,"box_id":boxid}
-            headers = {'Content-Type': 'application/json'} 
-            response_2 = requests.post("https://boxflow.herokuapp.com/deposit", params=params, headers=headers, json = msg)
-            print(json.dumps(msg))
+            
